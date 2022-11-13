@@ -1,0 +1,36 @@
+ESP8266
+
+				LED	SDA	SCL
+Espressif ESP8266 DevKitC V1	none	14	2
+Adafruit Huzzah ESP8266 Feather	none	4	5
+
+After opening a terminal:
+	get_esp8266
+
+Find port:
+	ls /dev/cu.*		Mac
+	ls /dev/tty*		Linux
+
+Copying a project:
+	cp -r $IDF_PATH/examples/get-started/hello_world .
+
+Configuration:
+	make menuconfig
+		Set Serial flasher config | Default serial port to /dev/cu.SLAB_USBtoUART	Mac
+
+Building:
+	make -j4 all
+
+Flashing:
+	make -j4 flash
+
+Monitoring:
+	make -j4 monitor
+	Ctrl+] to exit
+
+Or combine building, flashing and monitoring:
+	make -j4 flash monitor
+	Ctrl+] to exit
+
+Cleanup:
+	make clean

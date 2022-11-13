@@ -1,0 +1,62 @@
+menu "Listing10-2 Configuration"
+
+    menu "I2C Controller"
+
+        config I2C_CONTROLLER_SDA
+            int "SDA GPIO Num"
+            default 21
+            help
+                GPIO number for I2C Controller data line.
+
+                Espressif ESP32 DevKitC V4      21
+                Espressif ESP32-C3 DevKitC 02   18
+                Sparkfun ESP32 Thing Plus       23
+                Adafruit Feather Huzzah32       23
+    
+        config I2C_CONTROLLER_SCL
+            int "SCL GPIO Num"
+            default 22
+            help
+                GPIO number for I2C Controller clock line.
+
+                Espressif ESP32 DevKitC V4      22
+                Espressif ESP32-C3 DevKitC 02   19
+                Sparkfun ESP32 Thing Plus       22
+                Adafruit Feather Huzzah32       22
+
+        config I2C_CONTROLLER_PORT_NUM
+            int "Port Number"
+            default 0
+            help
+                Port number for I2C Controller device.
+
+        config I2C_CONTROLLER_FREQUENCY
+            int "Controller Frequency"
+            default 400000
+            help
+                I2C Speed of Controller device.
+    endmenu
+
+    menu "I2C MCP4725 DAC"
+    
+        config I2C_MCP4725_ADDRESS_1
+            hex "MCP4725 DAC Address 1"
+            default 0x60
+            help
+                Hardware Address of I2C Peripheral Port.
+                
+                Sparkfun MCP4725    0x60 or 0x61
+                Adafruit MCP4725    0x62 or 0x63
+                
+        config I2C_MCP4725_ADDRESS_2
+            hex "MCP4725 DAC Address 2"
+            default 0x61
+            help
+                Hardware Address of I2C Peripheral Port.
+                
+                Sparkfun MCP4725    0x60 or 0x61
+                Adafruit MCP4725    0x62 or 0x63
+
+    endmenu
+
+endmenu

@@ -1,0 +1,32 @@
+Pico
+
+                                     SDA     SCL    INT
+Raspberry Pi Pico Development Board    4       5     21
+
+After opening a terminal:
+	get_pico		{ Debian only }
+
+Copying a project:
+	cp -r ~/pico/pico-examples/hello_world .
+
+Configuration:
+	mkdir build
+	cd build
+	cmake ..
+	cd ..
+
+Building:
+	cd build
+	make -j4
+
+Flashing:
+	Hold down reset button on Pico and turn on power
+	Pico will mount as mass storage device
+	Copy .uf2 file from build to device
+	Examples:
+		cp Listing10-2.uf2 /media/username/RPI-RP2	{ Debian }
+		sudo cp Listing10-2.uf2 /dev/sda1		{ Raspberry Pi }
+
+Console:
+	minicom -b 115200 -o -D /dev/ttyACM0
+	ctrl-A X

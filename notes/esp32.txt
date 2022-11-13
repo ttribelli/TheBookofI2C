@@ -1,0 +1,38 @@
+ESP32
+
+				LED	SDA	SCL	INT
+Espressif ESP32 DevKitC V4	none	21	22	23
+Espressif ESP32-C3 DevKitC 02	none	18	19	 3
+Sparkfun ESP32 Thing Plus	13	23	22	14
+Adafruit Huzzah32 ESP32 Feather	13	23	22	14
+
+After opening a terminal:
+	get_esp32
+
+Find port:
+	ls /dev/cu.*		Mac
+	ls /dev/tty*		Linux
+
+Copying a project:
+	cp -r $IDF_PATH/examples/get-started/hello_world .
+
+Configuration:
+	idf.py set-target esp32
+	idf.py menuconfig
+
+Building:
+	idf.py build
+
+Flashing:
+	idf.py -p /dev/ttyUSB0 flash
+
+Monitoring:
+	idf.py -p /dev/ttyUSB0 monitor
+	Ctrl+] to exit
+
+Or combine building, flashing and monitoring:
+	idf.py -p /dev/ttyUSB0 flash monitor
+	Ctrl+] to exit
+
+Cleanup:
+	idf.py fullclean
