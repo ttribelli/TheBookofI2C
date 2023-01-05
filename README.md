@@ -15,3 +15,5 @@ The targets for these ports include
 Espressif ESP8266  
 Espressif ESP32  
 Raspberry Pi Pico  
+
+See "Releases" for the "lab notes" documenting what was done during testing of the examples in the book.

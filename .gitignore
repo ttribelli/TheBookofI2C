@@ -2,4 +2,5 @@
 sdkconfig
 sdkconfig.old
 build/
+*.pdf
 
